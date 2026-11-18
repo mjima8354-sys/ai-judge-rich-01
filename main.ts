@@ -8,7 +8,7 @@
 // opening cannot be entered (the transcript gate's thinking_in_window).
 //
 // Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
-//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts.
 //
 // python/main.py is the same entry in Python 3.13, writing the same bytes. Enter one of them: a repository with both
 // main.ts and main.py at its root is refused, so to enter the Python one, move python/main.py to the root in place of
@@ -19,12 +19,6 @@ import { join } from 'node:path';
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-const PLAN = [
-  'Plan: sell spreadsheet cleanup as a fixed-price service.',
-  'Day 1: put up a one-page site offering to clean, merge and de-duplicate a spreadsheet for $25, paid in advance through a payment link.',
-  'Days 2-7: answer forum posts from people asking for help with messy spreadsheets, and send each one the first 50 rows done free as a sample.',
-  'Days 8-30: do every job with code within a day, ask each buyer for a review, and spend up to $60 on ads once ten jobs are done.',
-  'Keep $40 for hosting and fees, and drop any channel that brings no paying buyer within a week.',
-].join('\n');
+const PLAN = '$100-to-$1000 plan. Days 1-2: Research 3 subreddits where freelancers pay. Spend $15 on domain. Day 3: Notion template. Day 4: Gumroad $27 link. Access. Day 5: Post in 2. Sale $27. Reinvest $10 ads. CAC <$3. Days 6-9: Second sale $27. Reinvest $15 into ads. Day 10: If no sale, pivot data-entry @ $15/hr, max 20 hrs = $300. Days 11-15: Budget template. Bundle: 2 for $49. Upgrade $27 to $49. Day 20: $249 revenue (9 bundle + 2 individual). Invest $150 into FB/IG ads, lookalike. ROAS target: 2.5x. Days 21-25: Hit $500 milestone. 15 sales + 3 Pro @ $99 = $745. Days 26-28: Publish tutorials. Assets compound: keep driving traffic. Day 28: $800+ revenue. Reinvest $300 into top ad. Keep $450. Day 30: Final push. Target: $1,000 total revenue. Net after $300 reinvestment: $700+. Fallback if main channel fails by Day 10: data-entry @ $15/hr, max 20 hrs = $300. Use $70 for domain/ad setup. Remaining 20 days: 2 hrs/day = $300 additional. Target: $600 by Day 30';
 
 writeFileSync(join(OUTPUT_DIR, 'entry.txt'), PLAN);
